@@ -2,8 +2,19 @@
 
 function handleKeyUp(event) {
     if (event.keyCode === 32) {
-        console.log("Você precionou espaço");
+        jump();
     }
+}
+
+function jump() {
+    let position = 0;
+
+    let upInterval = setInterval(() => {
+        position += 20;
+        
+        dino.style.bottom = position + 'px';
+
+    }, 20);
 }
 
 document.addEventListener('keyup', handleKeyUp);
